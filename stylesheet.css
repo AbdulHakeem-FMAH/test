@@ -1,0 +1,169 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #ffece3 0%, #ffd1cc 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #ffafa6, #ff8282);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: linear-gradient(135deg, #ffd8d8, #ffe5e5);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff6a88;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.photo-gallery img {
+    width: calc(33.33% - 10px); /* Each photo takes up 33.33% width with gap */
+    max-height: calc((100vw / 3) * 2); /* Set max height based on 2:3 aspect ratio */
+    object-fit: cover; /* Ensure photos cover the container maintaining aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-box {
+    position: relative;
+    display: inline-block;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.photo-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    padding-top: 180%; /* 2:3 aspect ratio */
+}
+
+.photo-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.photo-content:hover img {
+    transform: scale(1.1);
+}
+
+.photo-box {
+    position: relative;
+    display: inline-block;
+    width: 300px; /* Adjust to your image size */
+    height: 400px; /* Adjust to your image size */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 182, 193, 0.9);
+    color: black;
+    font-style: italic;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.photo-box:hover .message {
+    opacity: 1;
+}
+
+
+
+
+.video-container {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the video */
+}
+
+button#celebrate-button {
+    margin: 20px;
+    padding: 15px 30px;
+    background-color: #ff8282;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#celebrate-button:hover {
+    background-color: #ff6a88;
+}
+
+
+@media (max-width: 600px) {
+    .photo-gallery {
+        flex-direction: column; /* Stack photos vertically on small screens */
+    }
+
+    .photo-gallery img {
+        width: 100%; /* Full width on smaller screens */
+        max-height: 100%; /* Ensure photos fit within the container */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+        margin-bottom: 10px; /* Add margin between stacked photos */
+    }
+}
