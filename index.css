@@ -65,7 +65,7 @@ h2 {
     overflow: hidden;
     border-radius: 10px;
     width: 100%;
-    padding-top: 180%; /* 2:3 aspect ratio */
+    padding-top: 167%; /* 2:3 aspect ratio */
 }
 
 .photo-content img {
